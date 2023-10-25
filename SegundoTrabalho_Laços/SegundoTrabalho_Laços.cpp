@@ -9,19 +9,21 @@ int main() {
 	int dificuldade = 3;
 	int tentativas = 8;
 	string dificuldade_por_escrito = "Facil.    ";
+	const int numLines = 30;
+	int rep;
 
 	while (true) {
 		cout << "\n";
-		cout << "                           |---------------------------------------------------|\n";
-		cout << "                           |        Bem-vindo ao jogo adivinhe a senha!        |\n";
-		cout << "                           |                                                   |\n";
-		cout << "                           |                    1. Fim                         |\n";
-		cout << "                           |                    2. Sobre                       |\n";
-		cout << "                           |              3. Dificuldade: " << dificuldade_por_escrito << "           |\n";
-		cout << "                           |                    4. Jogar                       |\n";
-		cout << "                           |---------------------------------------------------|\n";
+		cout << "                                                    |----------------------------------------------------|\n";
+		cout << "                                                    |        Bem-vindo ao jogo adivinhe a senha!         |\n";
+		cout << "                                                    |                                                    |\n";
+		cout << "                                                    |                    1. Fim                          |\n";
+		cout << "                                                    |                    2. Sobre                        |\n";
+		cout << "                                                    |              3. Dificuldade: " << dificuldade_por_escrito << "            |\n";
+		cout << "                                                    |                    4. Jogar                        |\n";
+		cout << "                                                    |----------------------------------------------------|\n";
 		cout << "\n";
-		cout << "                           | Escolha: ";	
+		cout << "                                                    | Escolha: ";	
 		cin >> escolha;
 		cout << "\n";
 
@@ -31,24 +33,28 @@ int main() {
 		switch (escolha) {
 
 		case 1://FIM
-			cout << "\n";
-			cout << "                                           |--------------|\n";
-			cout << "                                           |              |\n";
-			cout << "                                           |   END GAME   |\n";
-			cout << "                                           |              |\n";
-			cout << "                                           |--------------|\n";
-			cout << "\n";
+			for (rep; rep < numLines; rep++) {
+				cout << "\n";
+			}
+			cout << "                                                                  |----------------|\n";
+			cout << "                                                                  |                |\n";
+			cout << "                                                                  |    END GAME    |\n";
+			cout << "                                                                  |                |\n";
+			cout << "                                                                  |----------------|\n";
+			for (rep; rep < numLines; rep++) {
+				cout << "\n";
+			}
 			return 0;
 
 			break;
 		case 2://SOBRE
 			cout << "\n";
-			cout << "                         |---------------------------------------------------|\n";
-			cout << "                         |   Desenvolvimento: Leonardo Jibran Machiavelli.   |\n";
-			cout << "                         |               Data: 23/10/2023                    |\n";
-			cout << "                         |        Professor: Eduardo Alves da Silva.         |\n";
-			cout << "                         |       Disciplina: Algoritimos e Programacao.      |\n";
-			cout << "                         |---------------------------------------------------|\n";
+			cout << "                                                |----------------------------------------------------|\n";
+			cout << "                                                |   Desenvolvimento: Leonardo Jibran Machiavelli.    |\n";
+			cout << "                                                |               Data: 23/10/2023                     |\n";
+			cout << "                                                |        Professor: Eduardo Alves da Silva.          |\n";
+			cout << "                                                |       Disciplina: Algoritimos e Programacao.       |\n";
+			cout << "                                                |----------------------------------------------------|\n";
 			cout << "\n";
 
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
@@ -57,15 +63,15 @@ int main() {
 			break;
 		case 3://DIFICULDADE
 			cout << "\n";
-			cout << "                                     |----------------------------|\n";
-			cout << "                                     |  Escolha uma dificuldade:  |\n";
-			cout << "                                     |                            |\n";
-			cout << "                                     |         1-Facil.           |\n";
-			cout << "                                     |         2-Medio.           |\n";
-			cout << "                                     |         3-Dificil.         |\n";
-			cout << "                                     |----------------------------|\n";
+			cout << "                                                             |--------------------------|\n";
+			cout << "                                                             |  Escolha uma dificuldade:|\n";
+			cout << "                                                             |                          |\n";
+			cout << "                                                             |         1-Facil.         |\n";
+			cout << "                                                             |         2-Medio.         |\n";
+			cout << "                                                             |         3-Dificil.       |\n";
+			cout << "                                                             |--------------------------|\n";
 			cout << "\n";
-			cout << "                                     | Escolha: ";
+			cout << "                                                             | Escolha: ";
 			cin >> escolha;
 			cout << "\n";
 
@@ -78,12 +84,12 @@ int main() {
 				dificuldade = 3;
 				tentativas = 8;
 				cout << "\n";
-				cout << "                      |-------------------------------------------------|\n";
-				cout << "                      |     Dificuldade do jogo mudou para Facil.       |\n";
-				cout << "                      |                                                 |\n";
-				cout << "                      |               Senha: " << dificuldade << " digitos.                 |\n";
-				cout << "                      |           Voce possui: " << tentativas << " tentativas.            |\n";
-				cout << "                      |-------------------------------------------------|\n";
+				cout << "                                             |--------------------------------------------------|\n";
+				cout << "                                             |     Dificuldade do jogo mudou para Facil.        |\n";
+				cout << "                                             |                                                  |\n";
+				cout << "                                             |               Senha: " << dificuldade << " digitos.                  |\n";
+				cout << "                                             |           Voce possui: " << tentativas << " tentativas.             |\n";
+				cout << "                                             |--------------------------------------------------|\n";
 				cout << "\n";
 
 				system("pause");//pausa o systema ate o usuario digitar uma tecla
@@ -95,12 +101,12 @@ int main() {
 				dificuldade = 4;
 				tentativas = 10;
 				cout << "\n";
-				cout << "                      |-------------------------------------------------|\n";
-				cout << "                      |     Dificuldade do jogo mudou para Medio.       |\n";
-				cout << "                      |                                                 |\n";
-				cout << "                      |               Senha: " << dificuldade << " digitos.                 |\n";
-				cout << "                      |           Voce possui: " << tentativas << " tentativas.           |\n";
-				cout << "                      |-------------------------------------------------|\n";
+				cout << "                                             |--------------------------------------------------|\n";
+				cout << "                                             |     Dificuldade do jogo mudou para Medio.        |\n";
+				cout << "                                             |                                                  |\n";
+				cout << "                                             |               Senha: " << dificuldade << " digitos.                  |\n";
+				cout << "                                             |           Voce possui: " << tentativas << " tentativas.            |\n";
+				cout << "                                             |--------------------------------------------------|\n";
 				cout << "\n";
 
 
@@ -113,12 +119,12 @@ int main() {
 				dificuldade = 5;
 				tentativas = 12;
 				cout << "\n";
-				cout << "                      |-------------------------------------------------|\n";
-				cout << "                      |     Dificuldade do jogo mudou para Dificil.     |\n";
-				cout << "                      |                                                 |\n";
-				cout << "                      |               Senha: " << dificuldade << " digitos.                 |\n";
-				cout << "                      |           Voce possui: " << tentativas << " tentativas.           |\n";
-				cout << "                      |-------------------------------------------------|\n";
+				cout << "                                             |--------------------------------------------------|\n";
+				cout << "                                             |     Dificuldade do jogo mudou para Dificil.      |\n";
+				cout << "                                             |                                                  |\n";
+				cout << "                                             |               Senha: " << dificuldade << " digitos.                  |\n";
+				cout << "                                             |           Voce possui: " << tentativas << " tentativas.            |\n";
+				cout << "                                             |--------------------------------------------------|\n";
 				cout << "\n";
 
 
@@ -128,9 +134,9 @@ int main() {
 				break;
 			default://NENHUMA_RESPOSTA
 				cout << "\n";
-				cout << "                          |-----------------------------------------|\n";
-				cout << "                          |   Escolha alguma opcao entre: [1 - 3]   |\n";
-				cout << "                          |-----------------------------------------|\n";
+				cout << "                                                  |----------------------------------------|\n";
+				cout << "                                                  |   Escolha alguma opcao entre: [1 - 3]  |\n";
+				cout << "                                                  |----------------------------------------|\n";
 				cout << "\n";
 
 				system("pause");//pausa o systema ate o usuario digitar uma tecla
@@ -163,9 +169,9 @@ int main() {
 			break;
 		default://NENHUMA_RESPOSTA
 			cout << "\n";
-			cout << "                          |-----------------------------------------|\n";
-			cout << "                          |   Escolha alguma opcao entre: [1 - 4]   |\n";
-			cout << "                          |-----------------------------------------|\n";
+			cout << "                                                      |----------------------------------------|\n";
+			cout << "                                                      |   Escolha alguma opcao entre: [1 - 4]  |\n";
+			cout << "                                                      |----------------------------------------|\n";
 			cout << "\n";
 
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
