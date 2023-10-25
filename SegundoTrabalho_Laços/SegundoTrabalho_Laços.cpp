@@ -9,7 +9,7 @@ int main() {
 	int dificuldade = 3;
 	int tentativas = 8;
 	string dificuldade_por_escrito = "Facil.    ";
-	const int numLines = 20;
+	const int numLines = 18;
 
 	while (true) {
 		cout << "\n";
