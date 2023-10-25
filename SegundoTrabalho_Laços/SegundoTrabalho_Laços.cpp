@@ -9,8 +9,7 @@ int main() {
 	int dificuldade = 3;
 	int tentativas = 8;
 	string dificuldade_por_escrito = "Facil.    ";
-	const int numLines = 30;
-	int rep;
+	const int numLines = 20;
 
 	while (true) {
 		cout << "\n";
@@ -33,7 +32,7 @@ int main() {
 		switch (escolha) {
 
 		case 1://FIM
-			for (rep; rep < numLines; rep++) {
+			for (int r = 0; r < numLines; r++) {
 				cout << "\n";
 			}
 			cout << "                                                                  |----------------|\n";
@@ -41,7 +40,7 @@ int main() {
 			cout << "                                                                  |    END GAME    |\n";
 			cout << "                                                                  |                |\n";
 			cout << "                                                                  |----------------|\n";
-			for (rep; rep < numLines; rep++) {
+			for (int x = 0; x < numLines; x++) {
 				cout << "\n";
 			}
 			return 0;
