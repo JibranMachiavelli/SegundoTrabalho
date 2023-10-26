@@ -153,6 +153,7 @@ int main() {
 		case 4://JOGAR
 
 
+
 			/*
 			srand(static_cast<unsigned int>(time(NULL)));
 			int senha[QTD_SENHA];
@@ -173,6 +174,42 @@ int main() {
 			for (int i = 0; i < QTD_SENHA; i++) {
 				cout << "Senha[" << i << "]: " << senha[i] << endl;            MOSTRA A SENHA REGERADA
 			}
+			---------------------------------------
+			ORIGINAL
+			#include <iostream>
+#include <ctime>
+
+				using namespace std;
+
+				int main() {
+
+				  const int QTD_SENHA = 5;
+				  srand(time(NULL));
+				  int senha[QTD_SENHA];
+
+				  for (int i = 0; i < QTD_SENHA; i++) { // qtd_senha pode ser dificuldade variavel
+					senha[i] = (rand() % 6) + 1;
+					bool flag_repetiu = false;
+					for (int y = i - 1; y >= 0; y--) {
+					  if (senha[i] == senha[y]) {
+						flag_repetiu = true;
+					  }
+					}
+					if (flag_repetiu == true) {
+					  i--;
+					}
+				  }
+
+				  for (int i = 0; i < QTD_SENHA; i++) {
+					cout << "Senha[" << i << "]: " << senha[i] << endl;
+				  }
+				  return 0;
+				}
+
+
+
+
+
 			*/
 			// Inicia o código com os numeros aleatórios
 
