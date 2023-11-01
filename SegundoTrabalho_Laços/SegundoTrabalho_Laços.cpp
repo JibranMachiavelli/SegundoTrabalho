@@ -150,7 +150,6 @@ int main() {
 		case 4://JOGAR
 			srand(static_cast<unsigned int>(time(NULL)));
 			senha = new int[dificuldade];
-			tentativa = new int[tentativas];
 
 			for (int i = 0; i < dificuldade; i++) { // qtd_senha pode ser dificuldade variavel
 				senha[i] = (rand() % 6) + 1;
@@ -178,47 +177,8 @@ int main() {
 				for (int num_dig = 0; num_dig < dificuldade; num_dig++) {
 					cin >> escolha;
 				}
-				cout << endl;
-				/*
-				int corretos_posicao_correta = 0;
-				int corretos_posicao_errada = 0;
-
-				for (int j = 0; j < dificuldade; j++) {
-					if (tentativa[j] == codigo[j]) {
-						corretos_posicao_correta++;
-					}
-					else{
-						corretos_posicao_errada++;
-					}
-				}
-
-
-				if (corretos_posicao_correta == dificuldade) {
-					cout << "Parabéns! Você venceu!" << endl;
-					cout << endl;
-					break;
-				}
-				else {
-					cout << "Números corretos na posição correta: " << corretos_posicao_correta << endl;
-					cout << "Números corretos na posição errada: " << corretos_posicao_errada << endl;
-				}
-
-				if (i == 1) {
-					cout << endl;
-					cout << "Você perdeu. O código correto era: ";
-					for (int j = 0; j < dificuldade; j++) {
-						cout << codigo[j] << " ";
-					}
-					cout << endl;
-					cout << endl;
-					break;
-				}
 			}
-			
-			system("pause");//pausa o systema ate o usuario digitar uma tecla
-			system("cls");
-			*/
-			
+				
 			break;
 		default://NENHUMA_RESPOSTA
 			cout << "\n";
