@@ -10,7 +10,7 @@ int main() {
 	int tentativas = 8;
 	string dificuldade_por_escrito = "Facil.    ";
 	const int numLines = 18;
-	const int QTD_SENHA = 5;
+	int* senha = nullptr; // Declarar a variável fora do switch
 
 	while (true) {
 		cout << "\n";
@@ -148,9 +148,9 @@ int main() {
 			break;
 		case 4://JOGAR
 			srand(static_cast<unsigned int>(time(NULL)));
-			int senha[QTD_SENHA];
+			senha = new int[dificuldade];
 
-			for (int i = 0; i < QTD_SENHA; i++) { // qtd_senha pode ser dificuldade variavel
+			for (int i = 0; i < dificuldade; i++) { // qtd_senha pode ser dificuldade variavel
 				senha[i] = (rand() % 6) + 1;
 				bool flag_repetiu = false;
 				for (int y = i - 1; y >= 0; y--) {
@@ -162,9 +162,11 @@ int main() {
 					i--;
 				}
 			}
-			for (int i = 0; i < QTD_SENHA; i++) {
-				cout << "Senha[" << i << "]: " << senha[i] << endl;
+			for (int i = 0; i < dificuldade; i++) {
+				cout << "Senha[" << i << "]: " << senha[i] << endl;//Mostra senha
 			}
+
+			
 
 			//tentativa vai diminuindo se os numeros nao forem corretos 
 			for (int i = tentativas; i > 0; i--) {
@@ -176,15 +178,47 @@ int main() {
 				for (int qtd_num_dig = 0; qtd_num_dig < dificuldade; qtd_num_dig++) {
 					cin >> escolha;
 				}
+				cout << endl;
+				/*
+				int corretos_posicao_correta = 0;
+				int corretos_posicao_errada = 0;
+
+				for (int j = 0; j < dificuldade; j++) {
+					if (tentativa[j] == codigo[j]) {
+						corretos_posicao_correta++;
+					}
+					else if (find(codigo.begin(), codigo.end(), tentativa[j]) != codigo.end()) {
+						corretos_posicao_errada++;
+					}
+				}
+
+				if (corretos_posicao_correta == dificuldade) {
+					cout << "Parabéns! Você venceu!" << endl;
+					cout << endl;
+					break;
+				}
+				else {
+					cout << "Números corretos na posição correta: " << corretos_posicao_correta << endl;
+					cout << "Números corretos na posição errada: " << corretos_posicao_errada << endl;
+				}
+
+				if (i == 1) {
+					cout << endl;
+					cout << "Você perdeu. O código correto era: ";
+					for (int j = 0; j < dificuldade; j++) {
+						cout << codigo[j] << " ";
+					}
+					cout << endl;
+					cout << endl;
+					break;
+				}
+				*/
 			}
-
-
-			//...
-
 
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
 			system("cls");
 
+			
 			break;
 		default://NENHUMA_RESPOSTA
 			cout << "\n";
@@ -197,7 +231,9 @@ int main() {
 			system("cls");
 
 			break;
+			
 		}
 	}
+	delete[]senha;
 	return 0;
 }
