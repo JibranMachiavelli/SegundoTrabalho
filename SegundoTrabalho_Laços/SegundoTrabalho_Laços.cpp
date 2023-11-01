@@ -176,12 +176,26 @@ int main() {
 				cout << "                                                     |Digite sua tentativa de " << dificuldade << " numeros (1-6):          |\n";
 				cout << "                                                     |--------------------------------------------------|\n";
 				//diiculdade numero de numeros digitados
-				for (int num_dig = 0; num_dig < dificuldade; num_dig++) {
+				for (int num = 0; num < dificuldade; num++) {
 					cout << "                                                     | Escolha: ";
 					cin >> escolha;
 				}
 			}  
-			asfsdfsd
+
+	//Codigo deve verificar cada vetor criado em senha[0] e em diante conforme dificuldade e informar posição correta e errada e se o jogador nao acertar e acabar as tentativas ele volta para o menu se ele ganhar tambem volta ao menu
+    //se meu num_dig for == ao meu vetor senha fazer posição correta
+	//		int posição_correta = 0;
+	//		int posição_errada = 0;
+    //
+	//		for (int i = 0; i < dificuldade; i++){
+	//		if (escolha == senha[0]) {
+	//			posição_correta++;
+	//			cout << posição_correta;
+	//		} else {
+	//			posição_errada++;
+	//		}
+	//	}
+
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
 			system("cls");
 
