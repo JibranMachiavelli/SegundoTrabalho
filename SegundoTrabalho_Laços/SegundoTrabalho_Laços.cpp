@@ -163,22 +163,28 @@ int main() {
 					i--;
 				}
 			}
+				cout << "                                                     |--------------------------------------------------|\n";
 			for (int i = 0; i < dificuldade; i++) {
-				cout << "Senha[" << i << "]: " << senha[i] << endl;//Mostra senha
+				cout << "                                                     |Senha[" << i << "]: " << senha[i] << "                                       |\n";//Mostra senha
 			}
+				cout << "                                                     |--------------------------------------------------|\n";
 
 			//tentativa vai diminuindo se os numeros nao forem corretos 
 			for (int i = tentativas; i > 0; i--) {
-				cout << "\n";
-				cout << "Tentativas restantes: " << i << endl;
-				cout << "Digite sua tentativa de " << dificuldade << " numeros (1-6): " << endl;
-
+				cout << "                                                     |--------------------------------------------------|\n";
+				cout << "                                                     |Tentativas restantes: " << i << "                           |\n";
+				cout << "                                                     |Digite sua tentativa de " << dificuldade << " numeros (1-6):          |\n";
+				cout << "                                                     |--------------------------------------------------|\n";
 				//diiculdade numero de numeros digitados
 				for (int num_dig = 0; num_dig < dificuldade; num_dig++) {
+					cout << "                                                     | Escolha: ";
 					cin >> escolha;
 				}
 			}
-				
+
+			system("pause");//pausa o systema ate o usuario digitar uma tecla
+			system("cls");
+
 			break;
 		default://NENHUMA_RESPOSTA
 			cout << "\n";
