@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 
+
 using namespace std;
 
 int main() {
@@ -149,6 +150,7 @@ int main() {
 		case 4://JOGAR
 			srand(static_cast<unsigned int>(time(NULL)));
 			senha = new int[dificuldade];
+			tentativa = new int[tentativas];
 
 			for (int i = 0; i < dificuldade; i++) { // qtd_senha pode ser dificuldade variavel
 				senha[i] = (rand() % 6) + 1;
@@ -166,8 +168,6 @@ int main() {
 				cout << "Senha[" << i << "]: " << senha[i] << endl;//Mostra senha
 			}
 
-			
-
 			//tentativa vai diminuindo se os numeros nao forem corretos 
 			for (int i = tentativas; i > 0; i--) {
 				cout << "\n";
@@ -175,7 +175,7 @@ int main() {
 				cout << "Digite sua tentativa de " << dificuldade << " numeros (1-6): " << endl;
 
 				//diiculdade numero de numeros digitados
-				for (int qtd_num_dig = 0; qtd_num_dig < dificuldade; qtd_num_dig++) {
+				for (int num_dig = 0; num_dig < dificuldade; num_dig++) {
 					cin >> escolha;
 				}
 				cout << endl;
@@ -187,10 +187,11 @@ int main() {
 					if (tentativa[j] == codigo[j]) {
 						corretos_posicao_correta++;
 					}
-					else if (find(codigo.begin(), codigo.end(), tentativa[j]) != codigo.end()) {
+					else{
 						corretos_posicao_errada++;
 					}
 				}
+
 
 				if (corretos_posicao_correta == dificuldade) {
 					cout << "Parabéns! Você venceu!" << endl;
@@ -212,12 +213,11 @@ int main() {
 					cout << endl;
 					break;
 				}
-				*/
 			}
-
+			
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
 			system("cls");
-
+			*/
 			
 			break;
 		default://NENHUMA_RESPOSTA
@@ -226,7 +226,7 @@ int main() {
 			cout << "                                                      |   Escolha alguma opcao entre: [1 - 4]  |\n";
 			cout << "                                                      |----------------------------------------|\n";
 			cout << "\n";
-
+			
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
 			system("cls");
 
