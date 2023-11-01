@@ -1,8 +1,6 @@
 #include <iostream>
-#include <cstdlib>
 #include <ctime>
-#include <vector>
-#include <algorithm>
+
 using namespace std;
 
 int main() {
@@ -13,8 +11,6 @@ int main() {
 	string dificuldade_por_escrito = "Facil.    ";
 	const int numLines = 18;
 	const int QTD_SENHA = 5;
-	vector<int> codigo;
-	vector<int> tentativa;
 
 	while (true) {
 		cout << "\n";
@@ -151,10 +147,6 @@ int main() {
 			}
 			break;
 		case 4://JOGAR
-
-
-
-			/*
 			srand(static_cast<unsigned int>(time(NULL)));
 			int senha[QTD_SENHA];
 
@@ -170,101 +162,25 @@ int main() {
 					i--;
 				}
 			}
-			
 			for (int i = 0; i < QTD_SENHA; i++) {
-				cout << "Senha[" << i << "]: " << senha[i] << endl;            MOSTRA A SENHA REGERADA
-			}
-			---------------------------------------
-			ORIGINAL
-			#include <iostream>
-#include <ctime>
-
-				using namespace std;
-
-				int main() {
-
-				  const int QTD_SENHA = 5;
-				  srand(time(NULL));
-				  int senha[QTD_SENHA];
-
-				  for (int i = 0; i < QTD_SENHA; i++) { // qtd_senha pode ser dificuldade variavel
-					senha[i] = (rand() % 6) + 1;
-					bool flag_repetiu = false;
-					for (int y = i - 1; y >= 0; y--) {
-					  if (senha[i] == senha[y]) {
-						flag_repetiu = true;
-					  }
-					}
-					if (flag_repetiu == true) {
-					  i--;
-					}
-				  }
-
-				  for (int i = 0; i < QTD_SENHA; i++) {
-					cout << "Senha[" << i << "]: " << senha[i] << endl;
-				  }
-				  return 0;
-				}
-
-
-
-
-
-			*/
-			// Inicia o código com os numeros aleatórios
-
-			codigo.clear();
-			for (int i = 0; i < dificuldade; i++) {
-				codigo.push_back(1 + rand() % 6);
+				cout << "Senha[" << i << "]: " << senha[i] << endl;
 			}
 
+			//tentativa vai diminuindo se os numeros nao forem corretos 
 			for (int i = tentativas; i > 0; i--) {
-				tentativa.clear();
-				cout << endl;
+				cout << "\n";
 				cout << "Tentativas restantes: " << i << endl;
-				cout << "Digite sua tentativa de " << dificuldade << " números (1-6): " << endl;
+				cout << "Digite sua tentativa de " << dificuldade << " numeros (1-6): " << endl;
 
-				for (int j = 0; j < dificuldade; j++) {
-					int numero;
-					cin >> numero;
-					tentativa.push_back(numero);
-				}
-
-				cout << endl;
-
-				int corretos_posicao_correta = 0;
-				int corretos_posicao_errada = 0;
-
-				for (int j = 0; j < dificuldade; j++) {
-					if (tentativa[j] == codigo[j]) {
-						corretos_posicao_correta++;
-					}
-					else if (find(codigo.begin(), codigo.end(), tentativa[j]) != codigo.end()) {
-						corretos_posicao_errada++;
-					}
-				}
-
-				if (corretos_posicao_correta == dificuldade) {
-					cout << "Parabéns! Você venceu!" << endl;
-					cout << endl;
-					break;
-				}
-				else {
-					cout << "Números corretos na posição correta: " << corretos_posicao_correta << endl;
-					cout << "Números corretos na posição errada: " << corretos_posicao_errada << endl;
-				}
-
-				if (i == 1) {
-					cout << endl;
-					cout << "Você perdeu. O código correto era: ";
-					for (int j = 0; j < dificuldade; j++) {
-						cout << codigo[j] << " ";
-					}
-					cout << endl;
-					cout << endl;
-					break;
+				//diiculdade numero de numeros digitados
+				for (int qtd_num_dig = 0; qtd_num_dig < dificuldade; qtd_num_dig++) {
+					cin >> escolha;
 				}
 			}
+
+
+			//...
+
 
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
 			system("cls");
