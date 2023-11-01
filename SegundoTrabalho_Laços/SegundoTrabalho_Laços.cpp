@@ -180,8 +180,8 @@ int main() {
 					cout << "                                                     | Escolha: ";
 					cin >> escolha;
 				}
-			}
-
+			}  
+			asfsdfsd
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
 			system("cls");
 
