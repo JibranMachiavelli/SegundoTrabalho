@@ -9,9 +9,9 @@ int main() {
 	int escolha;
 	int dificuldade = 3;
 	int tentativas = 8;
+	int* senha = new int[dificuldade];
 	string dificuldade_por_escrito = "Facil.    ";
 	const int numLines = 18;
-	int* senha = nullptr; // Declarar a variável fora do switch
 
 	while (true) {
 		cout << "\n";
@@ -24,7 +24,7 @@ int main() {
 		cout << "                                                    |                    4. Jogar                        |\n";
 		cout << "                                                    |----------------------------------------------------|\n";
 		cout << "\n";
-		cout << "                                                    | Escolha: ";	
+		cout << "                                                    | Escolha: ";
 		cin >> escolha;
 		cout << "\n";
 
@@ -151,7 +151,7 @@ int main() {
 			srand(static_cast<unsigned int>(time(NULL)));
 			senha = new int[dificuldade];
 
-			for (int i = 0; i < dificuldade; i++) { // qtd_senha pode ser dificuldade variavel
+			for (int i = 0; i < dificuldade; i++) {
 				senha[i] = (rand() % 6) + 1;
 				bool flag_repetiu = false;
 				for (int y = i - 1; y >= 0; y--) {
@@ -163,38 +163,79 @@ int main() {
 					i--;
 				}
 			}
-				cout << "                                                     |--------------------------------------------------|\n";
+
+			/*  Mostra a senha 
+			cout << "                                                     |--------------------------------------------------|\n";
 			for (int i = 0; i < dificuldade; i++) {
 				cout << "                                                     |Senha[" << i << "]: " << senha[i] << "                                       |\n";//Mostra senha
 			}
-				cout << "                                                     |--------------------------------------------------|\n";
+			cout << "                                                     |--------------------------------------------------|\n";
+			system("pause");
+			*/
+
+			cout << "                                                    |----------------------------------------------------|\n";
+			cout << "                                                    |        Bem Vindo ao Jogo Adivinhe a Senha!!!!      |\n";
+			cout << "                                                    |----------------------------------------------------|\n";
+			system("pause");
 
 			//tentativa vai diminuindo se os numeros nao forem corretos 
 			for (int i = tentativas; i > 0; i--) {
-				cout << "                                                     |--------------------------------------------------|\n";
-				cout << "                                                     |Tentativas restantes: " << i << "                           |\n";
-				cout << "                                                     |Digite sua tentativa de " << dificuldade << " numeros (1-6):          |\n";
-				cout << "                                                     |--------------------------------------------------|\n";
+				int* escolha = new int[dificuldade];
+				cout << "                                                     |---------------------------------------------------|\n";
+				cout << "                                                     |Tentativas restantes : " << i << "                          |\n";
+				cout << "                                                     |Digite sua tentativa de, " << dificuldade << " numeros (1-6):          |\n";
+				cout << "                                                     |---------------------------------------------------|\n";
 				//diiculdade numero de numeros digitados
-				for (int num = 0; num < dificuldade; num++) {
+				for (int i = 0; i < dificuldade; i++) {
 					cout << "                                                     | Escolha: ";
-					cin >> escolha;
-				}
-			}  
+					cin >> escolha[i];
+					//cout << " vetor [" << i << "]" << " senha :" << senha[i] << endl;
 
-	//Codigo deve verificar cada vetor criado em senha[0] e em diante conforme dificuldade e informar posição correta e errada e se o jogador nao acertar e acabar as tentativas ele volta para o menu se ele ganhar tambem volta ao menu
-    //se meu num_dig for == ao meu vetor senha fazer posição correta
-	//		int posição_correta = 0;
-	//		int posição_errada = 0;
-    //
-	//		for (int i = 0; i < dificuldade; i++){
-	//		if (escolha == senha[0]) {
-	//			posição_correta++;
-	//			cout << posição_correta;
-	//		} else {
-	//			posição_errada++;
-	//		}
-	//	}
+				}
+				int posição_certa = 0;
+				int posição_errada = 0;
+
+				for (int i = 0; i < dificuldade; i++) {
+					for (int j = 0; j < dificuldade; j++) {
+						if (escolha[i] == senha[j]) {
+							if (i == j) {
+								// Número na posição certa
+								posição_certa++;
+							}
+							else {
+								posição_errada++;
+							}
+						}
+					}
+				}
+
+				cout << "                                                     |--------------------------------------------------|\n";
+				cout << "                                                     |Numero na posicao certa : " << posição_certa << "                       |" << endl;
+				cout << "                                                     |Numero certo na posicao errada : " << posição_errada << "                |" << endl;
+				cout << "                                                     |--------------------------------------------------|\n";
+				cout << "\n";
+				//system("pause");
+
+				//Mostra se voce ganhou ou perdeu(jogo nao para)
+				if (posição_certa == dificuldade) {
+					cout << "                                                    |----------------------------------------------------|\n";
+					cout << "                                                    |          Voce acertou a senha parabens!!!!         |       " << endl;
+					cout << "                                                    |----------------------------------------------------|\n";
+					break;
+
+				}
+				if (i == 1) {
+					cout << "                                                     |--------------------------------------------------|\n";
+					cout << "                                                     |             Infelizmente voce perdeu!!           |" << endl;
+					cout << "                                                     |             A senha era :                        |" << endl;
+					cout << "                                                     |--------------------------------------------------|\n";
+					for (int i = 0; i < dificuldade; i++) {
+						cout << "                                                     |" << i + 1 << " - Senha : " << senha[i] << endl;
+					}
+				}
+			}
+
+
 
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
 			system("cls");
@@ -206,12 +247,12 @@ int main() {
 			cout << "                                                      |   Escolha alguma opcao entre: [1 - 4]  |\n";
 			cout << "                                                      |----------------------------------------|\n";
 			cout << "\n";
-			
+
 			system("pause");//pausa o systema ate o usuario digitar uma tecla
 			system("cls");
 
 			break;
-			
+
 		}
 	}
 	delete[]senha;
