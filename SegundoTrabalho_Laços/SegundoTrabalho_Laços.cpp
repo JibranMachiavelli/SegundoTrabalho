@@ -182,7 +182,7 @@ int main() {
 			for (int i = tentativas; i > 0; i--) {
 				int* escolha = new int[dificuldade];
 				cout << "                                                     |---------------------------------------------------|\n";
-				cout << "                                                     |Tentativas restantes : " << i << "                          |\n";
+				cout << "                                                     |Tentativas restantes : " << i << "                           |\n";
 				cout << "                                                     |Digite sua tentativa de, " << dificuldade << " numeros (1-6):          |\n";
 				cout << "                                                     |---------------------------------------------------|\n";
 				//diiculdade numero de numeros digitados
